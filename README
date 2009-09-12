@@ -1,0 +1,21 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2784
+
+template-init.vim let you to leave place holders in your template , then you can press <tab> key to jump to next placeholder (in insert mode)
+
+the placeholder could be in vimscript , so that you can generate content by vim function or vim command , even in perl or ruby.
+
+let g:skeleton_path = expand('~/.vim/skeleton')
+let g:skeleton_placeholder_key = '<Tab>'
+
+ to setup template:
+   au BufNewFile *.t   :call InitTemplate('template.t')
+   au BufNewFile *.pl  :call InitTemplate('')
+
+ to setup placeholder:
+   {{!perl:  print q|test|}}
+   {{!vim: expand('%')}}
+   {{:normal ggyp}}
+   {{place holder}}
+
+github:  http://github.com/c9s/template-init.vim
+
